@@ -1,12 +1,12 @@
-// npm i mysql2
+
 const mysql = require("mysql2/promise")
 
 const pool = mysql.createPool({
-    host: '127.0.0.1',
-    port: 3306,
-    user: 'root',
-    password: 'escola', // corrigir a senha
-    database: '2triDSC', // colocar o nome do seu BD
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT || 3306,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     multipleStatements: true
 })
 
